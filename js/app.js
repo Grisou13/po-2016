@@ -9,7 +9,7 @@ $("#add").submit((e)=>{
   let users = client.record.getList(`users`);
   let id = `users/${client.getUid()}`;
   let username = $("#username").val();
-  let image =
+  let image = ; //http://mycodingtricks.com/javascript/webcam-api/
   client.record.getRecord( id ).set( {"username":username} );
   users.addEntry(id);
 })
