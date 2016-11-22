@@ -1,10 +1,12 @@
 var express = require('express'),
     path = require('path'),
     bodyParser = require('body-parser'),
+    morgan = require("morgan"),
     app = express();
 
+app.use(morgan())
 // Include static assets. Not advised for production
-app.use(express.static(path.join(__dirname,'../','dist')));
+app.use(express.static(path.join(__dirname,'../')));
 //setup the body parser
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
@@ -19,7 +21,14 @@ app.get("/",(req,res)=>{
 app.post("/builds",(req,res)=>{
   return "ok";
 })
-app.get("/builds/:id",(req,res)=>{
+app.get("/users",(req,res)=>{
 
 })
+//add a user
+app.post("/users",(req,res)=>{
+
+})
+app.get("/users/:id",(req,res)=>{
+
+});
 module.exports = app;

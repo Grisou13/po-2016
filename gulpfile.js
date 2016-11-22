@@ -19,6 +19,9 @@ const paths = {
   },
   dest:"./dist"
 }
+
+var  cssFiles = '/**/*.css';
+var jsFiles = '/**/*.js';
 /**
  * ####################################
  * Js
@@ -27,7 +30,7 @@ const paths = {
 gulp.task('scripts', function () {
   console.log("scripts")
     //reactify and minify everything
-    var jsFiles = '/**/*.js';
+
     return gulp.src([paths.assets.js+jsFiles,paths.assets.libs+jsFiles])
         .pipe(browserify({
             debug: true
@@ -41,7 +44,7 @@ gulp.task('scripts', function () {
 
 gulp.task('styles', ["sass"], function () {
     //add some more sass to this eh ;)
-    var  cssFiles = '/**/*.css';
+
     return gulp.src([paths.assets.css+cssFiles,paths.assets.libs+cssFiles])
         .pipe(gulp.dest('./dist/css'));
 });
@@ -51,7 +54,7 @@ gulp.task('sass', function () {
     // .pipe(rename({
     //         suffix: '.build'
     // }))
-    .pipe(sass({sourceComments:true}).on('error', sass.logError))
+    .pipe(sass({sourceComments:true,includePaths:["./node_modules"]}).on('error', sass.logError))
     .pipe(gulp.dest('./css'));
 });
 

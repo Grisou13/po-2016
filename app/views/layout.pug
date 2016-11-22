@@ -17,6 +17,7 @@ html
     meta(name="author", content=author)
     meta(name="viewport", content='width=device-width, initial-scale=1')
     link(rel='stylesheet', href='/css/app.css')
+    script(defer,src="https://cdnjs.cloudflare.com/ajax/libs/deepstream.io-client-js/2.0.0/deepstream.js")
   body
     block header
 
@@ -27,7 +28,8 @@ html
     script(defer, src='/socket.io/socket.io.js')
     script(defer, src='/js/bootstrap.js')
     script(defer, src='/js/app.js')
-    //if lt IE 7
+    //[if lt IE 7]><!
       script(defer, src='//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js')
       script(defer)
         window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})
+    //<![end if]
