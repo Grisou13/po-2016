@@ -3,6 +3,13 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     morgan = require("morgan"),
     app = express();
+const { spawn } = require('child_process');
+const deepstream = require("deepstream.io-client-js")
+const client = deepstream("localhost:6020").login();
+// TODO: add a database for gods sake
+var users = {};
+var games = {};
+var sessions = {};
 
 app.use(morgan())
 // Include static assets. Not advised for production
@@ -18,17 +25,18 @@ app.set('view engine', 'pug');
 app.get("/",(req,res)=>{
   return res.render("index")
 });
-app.post("/builds",(req,res)=>{
-  return "ok";
-})
-app.get("/users",(req,res)=>{
+app.get("/games/new",(req,res)=>{
 
 })
-//add a user
-app.post("/users",(req,res)=>{
+app.post("/sessions",(req,res)=>{
 
 })
-app.get("/users/:id",(req,res)=>{
 
-});
+let onUserUpdate()
+client.record.listen('users/.*', (match, isSubscribed, response) => {
+  if(!isSubscribed){
+    response.accept();
+    client.record.getRecord(match)
+  }
+})
 module.exports = app;
