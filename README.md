@@ -13,6 +13,18 @@ We should defnitly use a database, but for now, we just keep our data in json fi
 
 Installation
 ===
+First install a cpp compiler (required by deepstream and node )
+```
+sudo apt-get install build-essentials gcc
+```
+Or on windows, install visual cpp build tools
+```
+http://landinghub.visualstudio.com/visual-cpp-build-tools
+```
+
+After that
+
+
 Install the project
 
 ```
