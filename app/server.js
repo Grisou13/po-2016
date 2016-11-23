@@ -7,9 +7,7 @@ const { spawn } = require('child_process');
 const deepstream = require("deepstream.io-client-js")
 const client = deepstream("localhost:6020").login();
 // TODO: add a database for gods sake
-var users = {};
-var games = {};
-var sessions = {};
+
 
 app.use(morgan())
 // Include static assets. Not advised for production

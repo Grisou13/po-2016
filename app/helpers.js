@@ -6,7 +6,13 @@ var SessionStatus = {
   FAILED:"failed",
   WAITING:"waiting"
 }
-var
+var users = {};
+var games = {};
+var sessions = {};
+
+class Savable {
+
+}
 
 class User {
 
@@ -16,6 +22,7 @@ class User {
     this.username = username
   }
 }
+
 class Game {
   constructor() {
     super();
@@ -30,6 +37,9 @@ class Game {
 
   }
   removeUser = () => {
+
+  }
+  save = () =>{
 
   }
 }
