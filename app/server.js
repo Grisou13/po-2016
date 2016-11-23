@@ -8,6 +8,7 @@ const deepstream = require("deepstream.io-client-js")
 const client = deepstream("localhost:8000").login();
 // TODO: add a database for gods sake
 
+import {User} from 'helpers'
 
 app.use(morgan())
 // Include static assets. Not advised for production
@@ -23,6 +24,9 @@ app.set('view engine', 'pug');
 app.get("/",(req,res)=>{
   return res.render("index")
 });
+app.post("/register",(req,res)=>{
+
+})
 app.get("/games/new",(req,res)=>{
 
 })

@@ -3,9 +3,13 @@ extends layout
 block content
   div.app
     div.title
-      h1(data-text="Welcome") Welcome visitor
-      h2 Current time since start of the last challenge
-      p.main-timer --time--
-    div.user-timers.row
-      each user in [1, 2, 3, 4, 5, 6, 7, 8 ,9,10,11,12]
-        include partials.user
+      h1(data-text="Welcome") Bienvenue
+      h2 Pour commencer, vous puvez selectionner un jeu
+
+    include partials/session_create.pug
+    include partials/register.pug
+    div.games
+      ul
+        - var games = [];
+        each game in games.length ? games : []
+          include partials/game.pug

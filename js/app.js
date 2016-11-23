@@ -6,12 +6,15 @@ client.event.subscribe("users/new",(data)=>{
 
 document.querySelector("#add").addEventListener('click',(e)=>{
   e.preventDefault();
-  let modal = document.createElement("form");
-  let username = document.createElement("input");
-  username.type = "text";
-  modal.appendChild(username);
-  document.appendChild(modal);
-  modal.class="modal modal-new-user";
+  console.log(this);
+
+  return false;
+  // let modal = document.createElement("form");
+  // let username = document.createElement("input");
+  // username.type = "text";
+  // modal.appendChild(username);
+  // document.appendChild(modal);
+  // modal.class="modal modal-new-user";
   modal.addEventListener("submit",(e)=>{
     e.preventDefault();
     let users = client.record.getList(`users`);

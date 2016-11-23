@@ -13,17 +13,19 @@ We should defnitly use a database, but for now, we just keep our data in json fi
 
 Installation
 ===
-First install a cpp compiler (required by deepstream and node )
+First install a cpp compiler (required by deepstream for node )
 ```
-sudo apt-get install build-essentials gcc
+sudo apt-get install build-essential gcc
 ```
 Or on windows, install visual cpp build tools
 ```
 http://landinghub.visualstudio.com/visual-cpp-build-tools
 ```
 
-After that
-
+Then install node.gyp
+```
+npm install -g node-gyp
+```
 
 Install the project
 

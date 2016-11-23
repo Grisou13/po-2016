@@ -11,15 +11,18 @@ var games = {};
 var sessions = {};
 
 class Savable {
-
+  save = () => {
+    let clsName = this.constructor.name;
+  }
 }
 
 class User {
 
-  constructor(id, username) {
+  constructor(id, name, surname) {
     super();
     this.id = id
-    this.username = username
+    this.name = name
+    this.surname= surname
   }
 }
 
@@ -27,7 +30,7 @@ class Game {
   constructor() {
     super();
   }
-  startSession = () => {
+  startSession = (id) => {
 
   }
   endSession = () => {
@@ -37,9 +40,6 @@ class Game {
 
   }
   removeUser = () => {
-
-  }
-  save = () =>{
 
   }
 }
@@ -58,10 +58,10 @@ class Session {
 
 class SessionList {
   constructor() {
-
+    this.sessions = {};
   }
-  appendSession = () =>{
-
+  appendSession = (session) =>{
+    this.sessions[session.id] = session
   }
   removeSession = () =>{
 

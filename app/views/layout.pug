@@ -17,7 +17,8 @@ html
     meta(name="author", content=author)
     meta(name="viewport", content='width=device-width, initial-scale=1')
     link(rel='stylesheet', href='/css/app.css')
-    script(defer,src="https://cdnjs.cloudflare.com/ajax/libs/deepstream.io-client-js/2.0.0/deepstream.js")
+    script(defer,src="/js/jquery.js")
+    script(defer,src="/js/deepstream.js")
   body
     block header
 
@@ -25,7 +26,7 @@ html
 
     block footer
 
-    script(defer, src='/socket.io/socket.io.js')
+    //script(defer, src='/socket.io/socket.io.js')
     script(defer, src='/js/bootstrap.js')
     script(defer, src='/js/app.js')
     //[if lt IE 7]><!
