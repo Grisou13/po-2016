@@ -30,7 +30,9 @@ app.post("/sessions",(req,res)=>{
 
 })
 
-let onUserUpdate()
+let onUserUpdate = () => {
+  
+}
 client.record.listen('users/.*', (match, isSubscribed, response) => {
   if(!isSubscribed){
     response.accept();
