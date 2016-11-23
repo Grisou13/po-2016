@@ -1,4 +1,5 @@
-var client = window.client = deepstream('localhost:6020').login()
+var host = window.location.hostname;
+var client = window.client = deepstream(host+':6020').login()
 client.event.subscribe("users/new",(data)=>{
   var user = fetch("localhost:8080/users/"+data.id)
 })
