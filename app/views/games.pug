@@ -1,0 +1,6 @@
+extends layout
+
+block content
+  ul.game-list
+    each game,index in games
+      a(href="#", data-id=index,class="game-link") #{index}

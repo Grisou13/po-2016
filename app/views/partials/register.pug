@@ -1,6 +1,8 @@
-button(class="btn btn-default btn-toggle col-md-1",data-modal="#regiser-user",id="add") register
-div.modal#regiser-user
-  form.new-user
-    input(type="text",class="form-input",placeholder="nom")
-    input(type="text",class="form-input",placeholder="prenom")
-    button.btn.btn-next.submit
+div.modal.fade#regiser-user
+  div.modal-dialog
+    div.modal-content
+      form#create-user-form
+        input(type="text",class="form-input",placeholder="nom",id="user-name")
+        input(type="text",class="form-input",placeholder="prenom",id="user-surname")
+        button(class="btn btn-primary btn-next",type="submit")
+          i.fa.fa-angle-right

@@ -10,36 +10,27 @@ var users = {};
 var games = {};
 var sessions = {};
 
-class Savable {
-  save = () => {
-    let clsName = this.constructor.name;
-  }
-}
-
-class User {
-
+ class User {
   constructor(id, name, surname) {
-    super();
     this.id = id
     this.name = name
     this.surname= surname
   }
 }
 
-class Game {
+ class Game {
   constructor() {
-    super();
   }
-  startSession = (id) => {
+  startSession  (id) {
 
   }
-  endSession = () => {
+  endSession () {
 
   }
-  addUser = () => {
+  addUser () {
 
   }
-  removeUser = () => {
+  removeUser () {
 
   }
 }
@@ -47,10 +38,10 @@ class Session {
   constructor(id) {
     //data in session user,time_limit,current_time,status
   }
-  start = () =>{
+  start () {
 
   }
-  stop = () => {
+  stop ()  {
 
   }
 
@@ -60,10 +51,10 @@ class SessionList {
   constructor() {
     this.sessions = {};
   }
-  appendSession = (session) =>{
+  appendSession (session) {
     this.sessions[session.id] = session
   }
-  removeSession = () =>{
+  removeSession () {
 
   }
 }
@@ -72,10 +63,11 @@ class Evaluator {
   constructor(language) {
 
   }
-  evaluate = (script) => {
+  evaluate (script) {
       return output
   }
-  test = (args,expected_output) => {
+  test (args,expected_output) {
 
   }
 }
+module.exports = {User, SessionList, Session, Game, SessionStatus}

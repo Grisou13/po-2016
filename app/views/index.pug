@@ -5,11 +5,12 @@ block content
     div.title
       h1(data-text="Welcome") Bienvenue
       h2 Pour commencer, vous puvez selectionner un jeu
-
-    include partials/session_create.pug
-    include partials/register.pug
-    div.games
-      ul
-        - var games = [];
-        each game in games.length ? games : []
-          include partials/game.pug
+    div
+      include partials/session_create.pug
+      include partials/register.pug
+    div.watcher
+     p are you a
+     a(href="/sessions") watcher
+    div.player
+      p or a
+      a(href="#",class="register", class="btn btn-default" , id="register-button",data-target="#regiser-user", data-form="#create-user-form",data-toggle="modal") player

@@ -27,7 +27,7 @@ var jsFiles = '/**/*.js';
  * Js
  */
 
-gulp.task('scripts', function () {
+gulp.task('scripts', ["scripts:vendor"] , function () {
   console.log("scripts")
     //reactify and minify everything
 
@@ -37,6 +37,9 @@ gulp.task('scripts', function () {
         }))
         .pipe(gulp.dest('./dist/js'));
 });
+gulp.task("scripts:vendor", function(){
+  return gulp.src(["node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js","node_modules/deepstream.io-client-js/dist/deepstream.min.js","node_modules/jquery/dist/jquery.min.js"]).pipe(gulp.dest("./js/libs"));
+})
 /**
  * ###################################
  * styles
@@ -77,15 +80,15 @@ gulp.task('minify:scripts',["scripts"], function() {
     .pipe(minify({
         ext:{
             src:'.debug.js',
-            min:'.js'
+            min:'.min.js'
         },
         noSource:true,
         exclude: ['tasks'],
         ignoreFiles: ['.combo.js', '-min.js']
     }))
-    .pipe(rename({
-            suffix: '.min'
-    }))
+    // .pipe(rename({
+    //         suffix: '.min'
+    // }))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./dist/min/'))
 });
@@ -129,14 +132,14 @@ gulp.task('concat:styles',["minify:styles"],function(){
  * ############################
  * watch tasks
  */
-gulp.task("watch",["watch:styles","watch:sass","watch:scripts"])
-gulp.task("watch:scripts",function(){
-  gulp.watch([paths.assets.js+jsFiles,paths.assets.libs+jsFiles],["js"]);
+gulp.task("watch",["watch:sass","watch:scripts"])
+gulp.task("watch:scripts",["scripts"],function(){
+  gulp.watch([paths.assets.js+jsFiles,paths.assets.libs+jsFiles],["scripts"]);
 });
-gulp.task("watch:styles",function(){
+gulp.task("watch:styles",["styles"],function(){
   gulp.watch([paths.assets.css+cssFiles,paths.assets.libs+cssFiles],["styles"]);
 });
-gulp.task("watch:sass",function(){
+gulp.task("watch:sass",["sass"],function(){
   gulp.watch([paths.assets.sass+'/**/*.scss',paths.assets.sass+'/**/*.sass'], ['sass']);
 });
 /*
