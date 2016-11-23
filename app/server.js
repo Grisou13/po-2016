@@ -5,7 +5,7 @@ var express = require('express'),
     app = express();
 const { spawn } = require('child_process');
 const deepstream = require("deepstream.io-client-js")
-const client = deepstream("localhost:6020").login();
+const client = deepstream("localhost:8000").login();
 // TODO: add a database for gods sake
 
 
@@ -31,7 +31,7 @@ app.post("/sessions",(req,res)=>{
 })
 
 let onUserUpdate = () => {
-  
+
 }
 client.record.listen('users/.*', (match, isSubscribed, response) => {
   if(!isSubscribed){
