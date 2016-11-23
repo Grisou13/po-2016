@@ -37,15 +37,15 @@ You will be able to connect to the server at ```localhost:8000```
 
 Structure
 ===
-*eval.py* used to evaluate script data from a game
-*server.js* used in production only
-*index-prod.html* __needs an update__ but may be used for production
-*server.js* shorthand to integrate app/index.js. Used in production only
-*app/* contains all server files
-*app/index.js* server runnable file
-*js/* contains all script assets
-*sass/* contains all sass files
-*css/* contains all css. Sass compiles files into this directory
+* *eval.py* used to evaluate script data from a game
+* *server.js* used in production only
+* *index-prod.html* __needs an update__ but may be used for production
+* *server.js* shorthand to integrate app/index.js. Used in production only
+* *app/* contains all server files
+* *app/index.js* server runnable file
+* *js/* contains all script assets
+* *sass/* contains all sass files
+* *css/* contains all css. Sass compiles files into this directory
 
 Build
 ===
