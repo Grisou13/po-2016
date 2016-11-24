@@ -8,9 +8,11 @@ block content
     div
       include partials/session_create.pug
       include partials/register.pug
-    div.watcher
-     p are you a
-     a(href="/sessions") watcher
-    div.player
-      p or a
-      a(href="#",class="register", class="btn btn-default" , id="register-button",data-target="#regiser-user", data-form="#create-user-form",data-toggle="modal") player
+    div.button-container-home.row
+      div.watcher.col-md-5.col-md-push-2
+       a(href="/sessions",class="watch btn-watcher",id="watch-button") watcher
+      div.col-md-2
+        p.text-center or a
+      div.player.col-md-5
+
+        a(href="#",class="register", class="btn-player" , id="register-button",data-target="#regiser-user", data-form="#create-user-form",data-toggle="modal") player

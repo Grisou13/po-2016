@@ -72,6 +72,16 @@ ds.event.listen('^new/.*', (eventName, isSubscribed, response) => {
     // stop publishing data
   }
 })
+ds.event.subscribe("eval/session", data => {
+  if(!data.name) return false;
+  ds.record.has(data.name, (err,has)=>{
+    if(!has) return false;
+    let currentSession = ds.record.getRecord(data.name).get();
+
+  })
+
+
+})
 ds.event.subscribe("new/user", data => {
   console.log("new user");
   users[data.id] = data

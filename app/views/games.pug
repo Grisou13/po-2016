@@ -1,6 +1,11 @@
 extends layout
 
 block content
+  script(defer,src="/js/session.js")
   ul.game-list
     each game,index in games
-      a(href="#", data-id=index,class="game-link") #{index}
+      li
+        div(id="game-"+index,data-id=index)
+          p #{index}
+          a(data-id=index,class="create-session") create session
+          div.session-list(data-id=index)

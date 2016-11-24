@@ -1,0 +1,39 @@
+.btn-player
+  +makeBigButton()
+  background-color: $green
+  color: $white
+.btn-watcher
+  +makeBigButton()
+  background-color: $red
+  color: $black
+.button-container-home
+
+  position: relative
+  margin-top: 40vh
+  a
+    &:hover, &:focus
+      text-decoration: none
+      color: inherit
+  p
+    font-size: 48px
+    padding-top: 26px
+.modal-register
+  width: 40vw!important
+  height: 10vh!important
+  font-size: 28px
+  & .modal-content
+    padding: 30px
+  & form
+    margin: 0
+  & .form-input
+    display: inline-block
+    margin-left: 3px
+    margin-right: 3px
+    &:last-child
+      margin-right: 0
+    &:first-child
+      margin-left: 0
+    &.btn-next
+      width: 50px
+      height: 50px
+      margin-top: -5px
