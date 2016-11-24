@@ -33,7 +33,9 @@ gulp.task('scripts', ["scripts:vendor"] , function () {
 
     return gulp.src([paths.assets.js+jsFiles,paths.assets.libs+jsFiles])
         .pipe(browserify({
-            debug: true
+            debug: true,
+            require:["react","react-dom"],
+            presets: ["es2015", "react"]
         }))
         .pipe(gulp.dest('./dist/js'));
 });

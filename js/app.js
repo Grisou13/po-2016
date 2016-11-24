@@ -11,7 +11,7 @@ function getParameterByName(name, url) {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
-function addToUrl(name,value,url){
+window.addToUrl = (name,value,url)=>{
   if (!url) {
     url = window.location.href;
   }
@@ -21,6 +21,7 @@ function addToUrl(name,value,url){
   var separator = (url.indexOf("?")===-1)?"?":"&";
   return url + separator + name + "=" + value;
 }
+
 var host = window.location.hostname;
 var client = window.client = deepstream(host+':8000').login()
 client.on('error', ( error, event, topic ) =>  console.log("error : ",error, event, topic) );
